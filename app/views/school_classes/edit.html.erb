@@ -1,0 +1,16 @@
+<h1> <%= @school_class.title %> <%= @school_class.room_number %> </h1>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <p style="color: red"><%= error %></p>
+    <% end %>
+<% end %>
+
+<%= form_for @school_class do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :room_number %>
+    <%= f.text_field :room_number %>
+
+    <%= f.submit %>
+<% end %>

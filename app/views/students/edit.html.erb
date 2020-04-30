@@ -1,0 +1,16 @@
+<h1> <%= @student.first_name %> <%= @student.last_name %> </h1>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <p style="color: red"><%= error %></p>
+    <% end %>
+<% end %>
+
+<%= form_for @student do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    
+    <%= f.submit %>
+<% end %>
